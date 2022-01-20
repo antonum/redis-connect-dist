@@ -31,6 +31,18 @@ lease_renewable    true
 password           iTI5kq-Eh0Zv4Q8XXXX
 username           v-root-my-role-nhoiOG13bv2eXXXXXXXX-1234567890
 ```
+On the Postgres side this command would create short-lived user:
+
+```
+postgres=# \du
+                                                        List of roles
+                     Role name                      |                         Attributes                         | Member of 
+----------------------------------------------------+------------------------------------------------------------+-----------
+ postgresuser                                       | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ v-kubernet-my-role-zTkK5sDAZuwOXXXXXXXX-1234567890 | Password valid until 2022-01-20 22:09:48+00                | {}
+ v-root-my-role-nhoiOG13bv2eXXXXXXXX-1234567890     | Password valid until 2022-01-20 22:43:36+00                | {}
+
+```
 
 ## Create Vault policy
 ```bash
